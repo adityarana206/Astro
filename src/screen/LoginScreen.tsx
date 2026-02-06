@@ -8,12 +8,12 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
-  ScrollView,
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
 type RootStackParamList = {
   LoginScreen: undefined;
   WelcomeScreen: undefined;
@@ -23,25 +23,19 @@ const { width, height } = Dimensions.get('window');
 
 const LoginScreen = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+
   return (
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        style={{ flex: 1 }}
+        style={styles.MainScreen}
       >
-        {/* <ScrollView 
-          contentContainerStyle={styles.scrollContent}
-          showsVerticalScrollIndicator={false}
-        > */}
         <View style={styles.logo}>
           <Image
-            source={{
-              uri: 'https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyanYyN2c3ZWN1NGttbHBqdXIybDUzdmplbmt1MXYzNGd5Y2x6MzMzdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/WmtnVfTNbDigG32A8u/source.gif',
-            }}
-            style={styles.video}
+            source={require('../assets/logo.png')}
             resizeMode="contain"
+            style={styles.video}
           />
-
           <Text style={styles.LogoTextHeader}>Astro Viah</Text>
           <Text style={styles.LogoTextBottom}>Your Cosmic Companion</Text>
         </View>
@@ -94,12 +88,11 @@ const LoginScreen = () => {
             <Text style={styles.loginButtonText}>Login</Text>
           </TouchableOpacity>
         </View>
+
         <Text style={styles.Bottom}>
           By continuing, you agree to our{' '}
           <Text style={styles.TNC}>Terms & Privacy Policy</Text>
         </Text>
-
-        {/* </ScrollView> */}
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
@@ -110,12 +103,11 @@ export default LoginScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#14152B',
+    backgroundColor: '#0f0000',
   },
 
-  scrollContent: {
-    flexGrow: 1,
-    justifyContent: 'center',
+  MainScreen: {
+    flex: 1,
   },
 
   logo: {
@@ -150,7 +142,7 @@ const styles = StyleSheet.create({
   loginPane: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#ffffff',
     opacity: 0.96,
     marginHorizontal: width * 0.06,
     paddingVertical: height * 0.03,
@@ -168,8 +160,8 @@ const styles = StyleSheet.create({
 
   RegsiterPart: {
     backgroundColor: '#3B5BA9',
-    paddingVertical: height * 0.015,
-    paddingHorizontal: 40,
+    paddingVertical: height * 0.012,
+    paddingHorizontal: 35,
     borderRadius: 10,
   },
 
@@ -241,11 +233,19 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center',
   },
+
   Bottom: {
     color: 'white',
     justifyContent: 'center',
     alignContent: 'center',
     textAlign: 'center',
+    marginTop: 'auto',
+    marginBottom: height * 0.02,
   },
-  TNC: {},
+
+  TNC: {
+    color: '#2258df',
+    fontWeight: '600',
+    fontSize: 10,
+  },
 });

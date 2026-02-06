@@ -5,6 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import LandingScreen from '../screen/LandingScreen';
 import LoginScreen from '../screen/LoginScreen';
 import WelcomeScreen from '../screen/WelcomeScreen';
+import BirthWelcomeScreen from '../screen/BirthWelcomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,11 @@ const AppNavigation = () => {
            <Stack.Screen
             name="WelcomeScreen"
             component={WelcomeScreen}
+            options={screenOptions}
+          />
+           <Stack.Screen
+            name="Birth"
+            component={BirthWelcomeScreen}
             options={screenOptions}
           />
         </Stack.Navigator>

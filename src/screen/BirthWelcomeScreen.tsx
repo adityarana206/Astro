@@ -12,26 +12,18 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import LinearGradient from 'react-native-linear-gradient';
-import { useNavigation, NavigationProp } from '@react-navigation/native';
 
 const { height, width } = Dimensions.get('window');
 
-type RootStackParamList = {
-  LoginScreen: undefined;
-  WelcomeScreen: undefined;
-  Birth: undefined; // 👈 Added since you're navigating to "Birth"
-};
-
-const WelcomeScreen = () => {
-  const [progress] = useState(0.33);
-  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+const BirthWelcomeScreen = () => {
+  const [progress, setProgress] = useState(0.33);
 
   return (
     <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.HeaderText}>
-        <Text style={styles.Steps}>Step 1 to 3</Text>
-        <Text style={styles.Steps}>33%</Text>
+        <Text style={styles.Steps}>Step 2 to 3</Text>
+        <Text style={styles.Steps}>67%</Text>
       </View>
 
       {/* Progress bar */}
@@ -64,7 +56,7 @@ const WelcomeScreen = () => {
           {/* Hint Row */}
           <View style={styles.inputContainer2}>
             <AntDesign name="star" size={20} color="#666" />
-            <Text style={styles.hintText}>
+            <Text style={styles.Input}>
               Your name personalizes your astrology journey.
             </Text>
           </View>
@@ -74,11 +66,7 @@ const WelcomeScreen = () => {
             colors={['#7a539f', '#9720aa']}
             style={styles.gradientButton}
           >
-            <TouchableOpacity
-              style={styles.buttonInner}
-              onPress={() => navigation.navigate('Birth')}
-              activeOpacity={0.7}
-            >
+            <TouchableOpacity style={styles.buttonInner}>
               <Text style={styles.buttonText}>Next</Text>
             </TouchableOpacity>
           </LinearGradient>
@@ -88,7 +76,7 @@ const WelcomeScreen = () => {
   );
 };
 
-export default WelcomeScreen;
+export default BirthWelcomeScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -127,7 +115,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 22,
     fontWeight: '700',
-    marginBottom: 4,
   },
 
   subtitle: {
@@ -153,13 +140,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     paddingHorizontal: 12,
     paddingVertical: 10,
-  },
-
-  hintText: {
-    flex: 1,
-    marginLeft: 8,
-    color: '#000',
-    fontSize: 14,
   },
 
   Input: {
