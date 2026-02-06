@@ -22,11 +22,10 @@ type RootStackParamList = {
 const { width, height } = Dimensions.get('window');
 
 const LoginScreen = () => {
-
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   return (
     <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView 
+      <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={{ flex: 1 }}
       >
@@ -34,73 +33,71 @@ const LoginScreen = () => {
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={false}
         > */}
-          <View style={styles.logo}>
-            <Image
-              source={{
-                uri: 'https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyanYyN2c3ZWN1NGttbHBqdXIybDUzdmplbmt1MXYzNGd5Y2x6MzMzdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/WmtnVfTNbDigG32A8u/source.gif',
-              }}
-              style={styles.video}
-              resizeMode="contain"
-            />
+        <View style={styles.logo}>
+          <Image
+            source={{
+              uri: 'https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyanYyN2c3ZWN1NGttbHBqdXIybDUzdmplbmt1MXYzNGd5Y2x6MzMzdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/WmtnVfTNbDigG32A8u/source.gif',
+            }}
+            style={styles.video}
+            resizeMode="contain"
+          />
 
-            <Text style={styles.LogoTextHeader}>Astro Viah</Text>
-            <Text style={styles.LogoTextBottom}>Your Cosmic Companion</Text>
-          </View>
+          <Text style={styles.LogoTextHeader}>Astro Viah</Text>
+          <Text style={styles.LogoTextBottom}>Your Cosmic Companion</Text>
+        </View>
 
-          <View style={styles.loginPane}>
-            <View style={styles.RegisterWrapper}>
-              <TouchableOpacity style={styles.RegsiterPart}>
-                <Text style={styles.RegisterText}>Sign In</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity style={styles.RegisterPartTwo}>
-                <Text style={styles.RegisterText}>Sign Up</Text>
-              </TouchableOpacity>
-            </View>
-
-            <View style={styles.Email}>
-              <View style={styles.inputWrapper}>
-                <MaterialIcons name="email" size={24} color="#666" />
-                <TextInput
-                  placeholder="Enter Email"
-                  style={styles.inputWithIcon}
-                  placeholderTextColor="#999"
-                  keyboardType="email-address"
-                  autoCapitalize="none"
-                />
-              </View>
-            </View>
-
-            <View style={styles.Password}>
-              <View style={styles.inputWrapper}>
-                <MaterialIcons name="lock" size={24} color="#666" />
-                <TextInput
-                  placeholder="Enter Password"
-                  style={styles.inputWithIcon}
-                  placeholderTextColor="#999"
-                  secureTextEntry
-                  autoCapitalize="none"
-                />
-              </View>
-            </View>
-
-            <TouchableOpacity style={styles.forgotPassword}>
-              <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+        <View style={styles.loginPane}>
+          <View style={styles.RegisterWrapper}>
+            <TouchableOpacity style={styles.RegsiterPart}>
+              <Text style={styles.RegisterText}>Sign In</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity
-             style={styles.loginButton}
+            <TouchableOpacity style={styles.RegisterPartTwo}>
+              <Text style={styles.RegisterText}>Sign Up</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.Email}>
+            <View style={styles.inputWrapper}>
+              <MaterialIcons name="email" size={24} color="#666" />
+              <TextInput
+                placeholder="Enter Email"
+                style={styles.inputWithIcon}
+                placeholderTextColor="#999"
+                keyboardType="email-address"
+                autoCapitalize="none"
+              />
+            </View>
+          </View>
+
+          <View style={styles.Password}>
+            <View style={styles.inputWrapper}>
+              <MaterialIcons name="lock" size={24} color="#666" />
+              <TextInput
+                placeholder="Enter Password"
+                style={styles.inputWithIcon}
+                placeholderTextColor="#999"
+                secureTextEntry
+                autoCapitalize="none"
+              />
+            </View>
+          </View>
+
+          <TouchableOpacity style={styles.forgotPassword}>
+            <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.loginButton}
             onPress={() => navigation.navigate('WelcomeScreen')}
-            >
-              <Text style={styles.loginButtonText}>Login</Text>
-            </TouchableOpacity>
-
-          </View>
+          >
+            <Text style={styles.loginButtonText}>Login</Text>
+          </TouchableOpacity>
+        </View>
         <Text style={styles.Bottom}>
-  By continuing, you agree to our{' '}
-  <Text style={styles.TNC}>Terms & Privacy Policy</Text>
-</Text>
-
+          By continuing, you agree to our{' '}
+          <Text style={styles.TNC}>Terms & Privacy Policy</Text>
+        </Text>
 
         {/* </ScrollView> */}
       </KeyboardAvoidingView>
@@ -244,14 +241,11 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center',
   },
-  Bottom:{
-color:'white',
-justifyContent:'center',
-alignContent:'center',
-textAlign:'center',
-
+  Bottom: {
+    color: 'white',
+    justifyContent: 'center',
+    alignContent: 'center',
+    textAlign: 'center',
   },
-  TNC:{
-
-  }
+  TNC: {},
 });
