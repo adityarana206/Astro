@@ -19,7 +19,7 @@ const { height, width } = Dimensions.get('window');
 type RootStackParamList = {
   LoginScreen: undefined;
   WelcomeScreen: undefined;
-  Birth: undefined; // 👈 Added since you're navigating to "Birth"
+  Birth: undefined;
 };
 
 const WelcomeScreen = () => {
@@ -30,13 +30,18 @@ const WelcomeScreen = () => {
     <SafeAreaView style={styles.container}>
       {/* Header */}
       <View style={styles.HeaderText}>
-        <Text style={styles.Steps}>Step 1 to 3</Text>
+        <Text style={styles.Steps}>Step 1 of 3</Text>
         <Text style={styles.Steps}>33%</Text>
       </View>
 
       {/* Progress bar */}
       <View style={styles.barBackground}>
-        <View style={[styles.barFill, { width: `${progress * 100}%` }]} />
+        <LinearGradient
+          colors={['#5B9FFF', '#A855F7']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={[styles.barFill, { width: `${progress * 100}%` }]}
+        />
       </View>
 
       {/* Welcome Section */}
@@ -46,24 +51,26 @@ const WelcomeScreen = () => {
           resizeMode="cover"
           style={styles.video}
         />
-
         <View style={styles.WelcomePane}>
           <Text style={styles.title}>Welcome to Your Journey</Text>
           <Text style={styles.subtitle}>Let's create your cosmic profile</Text>
 
+          {/* Name Label */}
+          <Text style={styles.inputLabel}>What's your name?</Text>
+
           {/* Name Input */}
           <View style={styles.inputContainer}>
-            <FontAwesome name="user" size={20} color="#666" />
+            <FontAwesome name="user" size={20} color="#9CA3AF" />
             <TextInput
               style={styles.Input}
-              placeholder="Enter your name"
+              placeholder=""
               placeholderTextColor="#666"
             />
           </View>
 
           {/* Hint Row */}
           <View style={styles.inputContainer2}>
-            <AntDesign name="star" size={20} color="#666" />
+            <AntDesign name="star" size={20} color="#9CA3AF" />
             <Text style={styles.hintText}>
               Your name personalizes your astrology journey.
             </Text>
@@ -71,7 +78,9 @@ const WelcomeScreen = () => {
 
           {/* Gradient Button */}
           <LinearGradient
-            colors={['#7a539f', '#9720aa']}
+            colors={['#5B9FFF', '#A855F7']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
             style={styles.gradientButton}
           >
             <TouchableOpacity
@@ -80,6 +89,7 @@ const WelcomeScreen = () => {
               activeOpacity={0.7}
             >
               <Text style={styles.buttonText}>Next</Text>
+              <AntDesign name="right" size={18} color="#fff" style={styles.arrowIcon} />
             </TouchableOpacity>
           </LinearGradient>
         </View>
@@ -93,116 +103,132 @@ export default WelcomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0f00002a',
+    backgroundColor: '#0F172A',
   },
 
   HeaderText: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 12,
+    paddingHorizontal: 20,
     paddingTop: 8,
   },
 
   Welcome: {
-    backgroundColor: '#a955f75e',
-    height: 443,
-    borderRadius: 20,
-    marginHorizontal: 12,
+    backgroundColor: '#3B2D52',
+    borderRadius: 24,
+    marginHorizontal: 16,
     marginTop: 20,
-    paddingTop: 20,
+    paddingTop: 32,
+    paddingBottom: 40,
   },
 
   WelcomePane: {
-    flex: 1,
-    padding: 20,
+    paddingHorizontal: 24,
+    paddingTop: 16,
   },
 
   Steps: {
-    color: '#fff',
-    fontWeight: '600',
+    color: '#94A3B8',
+    fontWeight: '500',
     fontSize: 14,
   },
 
   title: {
     color: '#fff',
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: '700',
-    marginBottom: 4,
+    marginBottom: 8,
+    textAlign: 'center',
   },
 
   subtitle: {
-    color: '#eee',
+    color: '#CBD5E1',
     fontSize: 16,
-    marginBottom: 25,
+    marginBottom: 32,
+    textAlign: 'center',
+  },
+
+  inputLabel: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: '600',
+    marginBottom: 12,
   },
 
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#ffffff',
-    borderRadius: 10,
-    paddingHorizontal: 12,
-    paddingVertical: 10,
+    backgroundColor: '#4A3A5E',
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 16,
   },
 
   inputContainer2: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#ffffff',
-    borderRadius: 10,
-    marginTop: 20,
-    paddingHorizontal: 12,
-    paddingVertical: 10,
+    backgroundColor: '#4A3A5E',
+    borderRadius: 12,
+    marginTop: 16,
+    paddingHorizontal: 16,
+    paddingVertical: 14,
   },
 
   hintText: {
     flex: 1,
-    marginLeft: 8,
-    color: '#000',
+    marginLeft: 12,
+    color: '#CBD5E1',
     fontSize: 14,
   },
 
   Input: {
     flex: 1,
-    paddingVertical: 10,
-    color: '#000',
-    marginLeft: 8,
+    paddingVertical: 0,
+    color: '#fff',
+    marginLeft: 12,
+    fontSize: 16,
   },
 
   barBackground: {
-    height: 6,
-    backgroundColor: '#241a1a',
+    height: 8,
+    backgroundColor: '#1E293B',
     borderRadius: 10,
-    marginHorizontal: 12,
-    marginTop: 8,
+    marginHorizontal: 20,
+    marginTop: 12,
+    overflow: 'hidden',
   },
 
   barFill: {
     height: '100%',
-    backgroundColor: '#fff',
     borderRadius: 10,
   },
 
   video: {
-    width: width * 0.22,
-    height: width * 0.22,
+    width: width * 0.28,
+    height: width * 0.28,
     alignSelf: 'center',
   },
 
   gradientButton: {
-    marginTop: 20,
-    borderRadius: 10,
+    marginTop: 24,
+    borderRadius: 12,
   },
 
   buttonInner: {
-    paddingVertical: 14,
-    borderRadius: 10,
+    paddingVertical: 16,
+    borderRadius: 12,
     alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
   },
 
   buttonText: {
     color: '#fff',
     fontWeight: '700',
     fontSize: 16,
+  },
+
+  arrowIcon: {
+    marginLeft: 8,
   },
 });

@@ -35,9 +35,7 @@ const LandingScreen = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.top}>
         <Image
-          source={{
-            uri: 'https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyanYyN2c3ZWN1NGttbHBqdXIybDUzdmplbmt1MXYzNGd5Y2x6MzMzdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/WmtnVfTNbDigG32A8u/source.gif',
-          }}
+          source={require('../assets/logo.png')}
           style={styles.video}
           resizeMode="contain"
         />
@@ -55,7 +53,7 @@ export default LandingScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#14152B',
+    backgroundColor: '#0F172A',
   },
   top: {
     flex: 1,

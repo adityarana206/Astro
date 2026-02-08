@@ -6,6 +6,7 @@ import LandingScreen from '../screen/LandingScreen';
 import LoginScreen from '../screen/LoginScreen';
 import WelcomeScreen from '../screen/WelcomeScreen';
 import BirthWelcomeScreen from '../screen/BirthWelcomeScreen';
+import BirthPlaceScreen from '../screen/BirthPlaceScreen'
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,11 @@ const AppNavigation = () => {
             name="Birth"
             component={BirthWelcomeScreen}
             options={screenOptions}
+          />
+          <Stack.Screen
+          name="BirthPlaceScreen"
+          component={BirthPlaceScreen}
+          options={screenOptions}
           />
         </Stack.Navigator>
       </NavigationContainer>
