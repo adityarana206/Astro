@@ -13,7 +13,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
-
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 const { height, width } = Dimensions.get('window');
 
 type RootStackParamList = {
@@ -89,7 +89,7 @@ const WelcomeScreen = () => {
               activeOpacity={0.7}
             >
               <Text style={styles.buttonText}>Next</Text>
-              <AntDesign name="right" size={18} color="#fff" style={styles.arrowIcon} />
+              <MaterialIcons name="navigate-next" size={18} color="#fff" style={styles.arrowIcon} />
             </TouchableOpacity>
           </LinearGradient>
         </View>

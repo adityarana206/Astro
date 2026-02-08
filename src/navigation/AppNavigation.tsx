@@ -2,10 +2,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import LandingScreen from '../screen/LandingScreen';
+import LandingScreen from '../screen/SplashScreen';
 import LoginScreen from '../screen/LoginScreen';
 import WelcomeScreen from '../screen/WelcomeScreen';
-import BirthWelcomeScreen from '../screen/BirthWelcomeScreen';
+import BirthWelcomeScreen from '../screen/BirthDateScreen';
 import BirthPlaceScreen from '../screen/BirthPlaceScreen'
 
 const Stack = createNativeStackNavigator();

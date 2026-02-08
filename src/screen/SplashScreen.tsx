@@ -20,12 +20,12 @@ type RootStackParamList = {
 };
 
 const LandingScreen = () => {
-  // ⭐ Typed navigation for TS
+  
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.navigate('LoginScreen'); // works in TS now
+      navigation.navigate('LoginScreen'); 
     }, 1500);
 
     return () => clearTimeout(timer);

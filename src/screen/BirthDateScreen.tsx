@@ -15,14 +15,14 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
-
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 const { height, width } = Dimensions.get('window');
 
 type RootStackParamList = {
   LoginScreen: undefined;
   WelcomeScreen: undefined;
   Birth: undefined;
-  // Add your next screen here
+  BirthPlaceScreen: undefined; 
 };
 
 const Birth = () => {
@@ -217,13 +217,12 @@ const Birth = () => {
             >
               <TouchableOpacity
                 style={styles.nextButton}
-                onPress={() => {
-                  'BirthPlaceScreen';
+                onPress={() => { navigation.navigate('BirthPlaceScreen');
                 }}
                 activeOpacity={0.7}
               >
                 <Text style={styles.nextButtonText}>Next</Text>
-                <AntDesign name="right" size={18} color="#fff" />
+                <MaterialIcons name="navigate-next" size={18} color="#fff" />
               </TouchableOpacity>
             </LinearGradient>
           </View>
@@ -274,6 +273,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 20,
     paddingTop: 8,
+    
   },
 
   Welcome: {
@@ -285,6 +285,7 @@ const styles = StyleSheet.create({
     paddingBottom: 32,
     borderWidth: 2,
     borderColor: '#5B9FFF',
+    
   },
 
   iconContainer: {

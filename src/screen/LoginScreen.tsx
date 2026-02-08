@@ -52,7 +52,7 @@ const LoginScreen: React.FC = () => {
   };
 
   // Form validation
-  const validateForm = (): boolean => {
+   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
     if (!email.trim()) {
@@ -363,7 +363,7 @@ const styles = StyleSheet.create({
   loginPane: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#3B2D52',
     opacity: 0.96,
     marginHorizontal: width * 0.06,
     paddingVertical: height * 0.03,
@@ -483,7 +483,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     textAlign: 'center',
     marginTop: 'auto',
-    marginBottom: height * 0.02,
+    marginBottom: height * 0.0,
     fontSize: width * 0.032,
   },
 
