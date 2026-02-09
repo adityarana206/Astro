@@ -21,6 +21,8 @@ type RootStackParamList = {
   WelcomeScreen: undefined;
   Birth: undefined;
   BirthPlaceScreen: undefined;
+  Home :undefined;
+  TabNavigator:undefined;
   // Add your next screen here
 };
 
@@ -105,8 +107,7 @@ const BirthPlaceScreen = () => {
               <TouchableOpacity
                 style={styles.nextButton}
                 onPress={() => {
-                  // Navigate to home or results screen
-                  // navigation.navigate('HomeScreen');
+                  navigation.navigate('TabNavigator')
                 }}
                 activeOpacity={0.7}
               >

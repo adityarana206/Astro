@@ -7,6 +7,8 @@ import LoginScreen from '../screen/LoginScreen';
 import WelcomeScreen from '../screen/WelcomeScreen';
 import BirthWelcomeScreen from '../screen/BirthDateScreen';
 import BirthPlaceScreen from '../screen/BirthPlaceScreen'
+import TabNavigation from './TabNavigation';
+import HomeScreen from '../screen/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +46,16 @@ const AppNavigation = () => {
           name="BirthPlaceScreen"
           component={BirthPlaceScreen}
           options={screenOptions}
+          />
+            <Stack.Screen
+            name="TabNavigator"
+            component={TabNavigation}
+            options={screenOptions}
+          />
+           <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={screenOptions}
           />
         </Stack.Navigator>
       </NavigationContainer>
