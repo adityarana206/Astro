@@ -483,13 +483,13 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     textAlign: 'center',
     marginTop: 'auto',
-    marginBottom: height * 0.0,
+    marginBottom: height * 0.05,
     fontSize: width * 0.032,
   },
 
   TNC: {
     color: '#2258df',
-    fontWeight: '600',
+    fontWeight: 'bold',
     fontSize: width * 0.032,
   },
 });

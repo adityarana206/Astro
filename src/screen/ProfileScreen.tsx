@@ -1,9 +1,19 @@
 import React from 'react'
+import { SafeAreaView,StyleSheet } from 'react-native'
 
 const ProfileScreen = () => {
   return (
-    <div>ProfileScreen</div>
+   <SafeAreaView style={styles.container}>
+          
+        </SafeAreaView>
   )
 }
 
 export default ProfileScreen
+
+const styles= StyleSheet.create({
+  container:{
+ flex:1,
+   backgroundColor :'#202235'
+  }
+})

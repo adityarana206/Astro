@@ -1,7 +1,16 @@
 import React from 'react'
+import { SafeAreaView ,StyleSheet} from 'react-native'
 
 export const MatchScreen = () => {
   return (
-    <div>MatchScreen</div>
+   <SafeAreaView style={styles.container}>
+       
+     </SafeAreaView>
   )
 }
+const styles= StyleSheet.create({
+  container:{
+ flex:1,
+   backgroundColor :'#202235'
+  }
+})

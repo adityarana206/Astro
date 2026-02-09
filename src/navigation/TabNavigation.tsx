@@ -2,13 +2,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import AntDesign from 'react-native-vector-icons/AntDesign'; 
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import HomeScreen from '../screen/HomeScreen';
 import ChatScreen from '../screen/ChatScreen';
 import TarrotScreen from '../screen/TarrotScreen';
 import { MatchScreen } from '../screen/MatchScreen';
 import ProfileScreen from '../screen/ProfileScreen';
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -17,7 +17,7 @@ const Tab = createBottomTabNavigator();
 const TabNavigation = () => {
   return (
     <SafeAreaView style={styles.safeArea} edges={['top']}>
-      <Tab.Navigator 
+      <Tab.Navigator
         initialRouteName="Home"
         screenOptions={{
           tabBarStyle: styles.tabBar,
@@ -37,16 +37,7 @@ const TabNavigation = () => {
             tabBarLabel: 'Home',
           }}
         />
-        <Tab.Screen
-          name="Chat"
-          component={ChatScreen}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <MaterialIcons name="chat" size={size} color={color} />
-            ),
-            tabBarLabel: 'Chat',
-          }}
-        />
+
         <Tab.Screen
           name="Tarot"
           component={TarrotScreen}
@@ -55,6 +46,16 @@ const TabNavigation = () => {
               <MaterialIcons name="auto-awesome" size={size} color={color} />
             ),
             tabBarLabel: 'Tarot',
+          }}
+        />
+        <Tab.Screen
+          name="Chat"
+          component={ChatScreen}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialIcons name="chat" size={size} color={color} />
+            ),
+            tabBarLabel: 'Chat',
           }}
         />
         <Tab.Screen
@@ -98,6 +99,7 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     elevation: 0,
     shadowOpacity: 0,
+    marginBottom: 30,
   },
   activeTab: {
     color: '#5B9FFF',
