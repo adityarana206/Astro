@@ -363,7 +363,7 @@ const styles = StyleSheet.create({
   loginPane: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#3B2D52',
+    backgroundColor: '#9a8cb08a',
     opacity: 0.96,
     marginHorizontal: width * 0.06,
     paddingVertical: height * 0.03,
@@ -483,13 +483,13 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     textAlign: 'center',
     marginTop: 'auto',
-    marginBottom: height * 0.05,
+    marginBottom: height * 0.0,
     fontSize: width * 0.032,
   },
 
   TNC: {
     color: '#2258df',
-    fontWeight: 'bold',
+    fontWeight: '600',
     fontSize: width * 0.032,
   },
 });

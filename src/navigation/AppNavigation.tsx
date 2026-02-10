@@ -57,6 +57,7 @@ const AppNavigation = () => {
             component={HomeScreen}
             options={screenOptions}
           />
+          
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
