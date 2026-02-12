@@ -56,7 +56,6 @@ const InfoCard: React.FC<InfoCardProps> = ({
   );
 };
 
-// ─── Screen ───────────────────────────────────────────────────────────────────
 
 const TarotScreen = () => {
   return (
