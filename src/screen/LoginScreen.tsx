@@ -363,8 +363,8 @@ const styles = StyleSheet.create({
   loginPane: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#9a8cb08a',
-    opacity: 0.96,
+    backgroundColor: '#f4f2f709',
+    // opacity: 0.1,
     marginHorizontal: width * 0.06,
     paddingVertical: height * 0.03,
     borderRadius: 25,

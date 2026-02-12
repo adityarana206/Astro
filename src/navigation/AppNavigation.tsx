@@ -4,7 +4,7 @@ import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import LandingScreen from '../screen/SplashScreen';
 import LoginScreen from '../screen/LoginScreen';
-import WelcomeScreen from '../screen/WelcomeScreen';
+import WelcomeScreen from '../screen/AskNameScreen';
 import BirthWelcomeScreen from '../screen/BirthDateScreen';
 import BirthPlaceScreen from '../screen/BirthPlaceScreen'
 import TabNavigation from './TabNavigation';
