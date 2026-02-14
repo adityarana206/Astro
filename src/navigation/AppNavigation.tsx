@@ -9,6 +9,7 @@ import BirthWelcomeScreen from '../screen/BirthDateScreen';
 import BirthPlaceScreen from '../screen/BirthPlaceScreen'
 import TabNavigation from './TabNavigation';
 import HomeScreen from '../screen/HomeScreen';
+import ReadFullDetailScreen from '../screen/ReadFullDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -57,7 +58,7 @@ const AppNavigation = () => {
             component={HomeScreen}
             options={screenOptions}
           />
-          
+         
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

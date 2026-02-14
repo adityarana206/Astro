@@ -483,7 +483,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     textAlign: 'center',
     marginTop: 'auto',
-    marginBottom: height * 0.0,
+    marginBottom: height * 0.02,
     fontSize: width * 0.032,
   },
 
